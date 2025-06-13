@@ -130,11 +130,7 @@
                     m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]);
             }
 
-            // Se asignan los valores de los determinantes a las variables pasandolas por la función
-            const dShow = det3(Dx)*-1;
-            const dxShow = det3(Dy)*-1;
-            const dyShow = det3(D);
-            const dzShow = det3(Dz)*-1
+            // Se asignan los valores de los determinantes a las variables pasandolas por la funcióN
             
             const d = det3(D);
             const dx = det3(Dx);
@@ -146,6 +142,10 @@
             Mostramos determinantes en la página
             Con el "toFixed" usamos los primeros 3 decimales para mayor legibilidad
             */
+            const dShow = det3(Dx)*-1;
+            const dxShow = det3(Dy)*-1;
+            const dyShow = det3(D);
+            const dzShow = det3(Dz)*-1
             document.getElementById('detD').textContent = `D: ${dShow.toFixed(3)}`;
             document.getElementById('detDx').textContent = `Dx: ${dxShow.toFixed(3)}`;
             document.getElementById('detDy').textContent = `Dy: ${dyShow.toFixed(3)}`;
