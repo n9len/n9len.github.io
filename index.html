@@ -131,10 +131,6 @@
             }
 
             // Se asignan los valores de los determinantes a las variables pasandolas por la función
-            const dShow = det3(Dx)*-1;
-            const dxShow = det3(Dy)*-1;
-            const dyShow = det3(D);
-            const dzShow = det3(Dz)*-1
             
             const d = det3(D);
             const dx = det3(Dx);
@@ -146,10 +142,10 @@
             Mostramos determinantes en la página
             Con el "toFixed" usamos los primeros 3 decimales para mayor legibilidad
             */
-            document.getElementById('detD').textContent = `D: ${dShow.toFixed(3)}`;
-            document.getElementById('detDx').textContent = `Dx: ${dxShow.toFixed(3)}`;
-            document.getElementById('detDy').textContent = `Dy: ${dyShow.toFixed(3)}`;
-            document.getElementById('detDz').textContent = `Dz: ${dzShow.toFixed(3)}`;
+            document.getElementById('detD').textContent = `D: ${d.toFixed(3)}`;
+            document.getElementById('detDx').textContent = `Dx: ${dx.toFixed(3)}`;
+            document.getElementById('detDy').textContent = `Dy: ${dy.toFixed(3)}`;
+            document.getElementById('detDz').textContent = `Dz: ${dz.toFixed(3)}`;
 
             // El sistema calcula si el Determinante D = 0, donde no se podría calcular la parábola
             // En pocas palabras la función no existe XD
