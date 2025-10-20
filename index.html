@@ -2,185 +2,55 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8" />
-    <title>Proyecto Parábola</title>
-    <!-- Librerías -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
-    <!-- API Desmos con clave gratuita -->
-    <script src="https://www.desmos.com/api/v1.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="https://i.pinimg.com/736x/f4/c6/32/f4c632c91e95f98746af4c00792fb960.jpg">
+    <!-- Atlas de la flora y fauna de la región -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css"> <!-- Styles externo -->
+    <title>Flora y Fauna</title>
 </head>
 
 <body>
-    <div class="isla">
-        <h1>Calculadora de parábola</h1>
-        <div class="indicacion">Ingrese los 3 puntos:</div>
-
-        <!-- Sección donde se encuentran las cajas de texto de las coordenadas-->
-        <form id="formulario">
-            <div class="fila-punto">
-                <label for="x1">X1:
-                    <input type="number" id="x1" step="any" required />
-                </label>
-                <label for="y1">Y1:
-                    <input type="number" id="y1" step="any" required />
-                </label>
-            </div>
-            <div class="fila-punto">
-                <label for="x2">X2:
-                    <input type="number" id="x2" step="any" required />
-                </label>
-                <label for="y2">Y2:
-                    <input type="number" id="y2" step="any" required />
-                </label>
-            </div>
-            <div class="fila-punto">
-                <label for="x3">X3:
-                    <input type="number" id="x3" step="any" required />
-                </label>
-                <label for="y3">Y3:
-                    <input type="number" id="y3" step="any" required />
-                </label>
-            </div>
-
-            <!-- Botón que inicia los cálculos y el motor gráfico Desmos-->
-            <button class="calcular" type="submit">Calcular parábola</button>
-        </form>
-    </div>
-
-    <!-- Contenedor que muestra la ecuación y los determinantes -->
-    <div class="isla resultados-container" style="min-height:180px;">
-        <div class="ecuacion" id="ecuacion">Ecuación: -</div>
-        <div class="determinantes">
-            <div class="determinante" id="detD">D: -</div>
-            <div class="determinante" id="detDx">Dx: -</div>
-            <div class="determinante" id="detDy">Dy: -</div>
-            <div class="determinante" id="detDz">Dz: -</div>
+    <nav>
+        <div class="contenedor-menu">
+            <button class="boton-menu" id="boton-menu">☰ Menú</button>
+            <ul class="lista-menu" id="lista-menu">
+                <li data-target="pagina-principal">Página Principal</li>
+                <li data-target="introduccion">Introducción</li>
+                <li data-target="">Flora</li>
+                <li data-target="">Fauna</li>
+                <li data-target="">Medicina</li>
+                <li data-target="">Ropa</li>
+                <li data-target="">Hábitat y evolución</li>
+                <li data-target="">MiniWiki</li>
+                <li data-target="">Referencias</li>
+                <li data-target="">Formulario</li>
+            </ul>
         </div>
-    </div>
+    </nav>
 
-    <!-- Renderizamos en otro contenedor la calculadora Desmos -->
-    <div id="calculator"></div>
+    <header id="pagina-principal">
+        <img class="mixquiahuala-header" src="./resources/mixquiahuala-header.png" alt="">
+        <div class="mixquiahuala-texto">
+            <h4>Flora y fauna</h4>
+            <h4>En Hidalgo</h4>
+        </div>
+    </header>
 
-    <script>
+    <br><br><br>
 
-        // Iniciamos Desmos y sus opciones de zoom y expresiones
-        const calculator = Desmos.GraphingCalculator(document.getElementById('calculator'),
-            {
-                expressions: true,
-                zoomButtons: true
-            });
+    <main>
+        <h2>La diversidad del ecosistema</h2>
+        <section id="introduccion" class="introduccion">
+            <p>Es bien sabido que en varios lugares de Hidalgo hay mucha variedad de flora y fauna, aunque el territorio
+                pueda parecer pequeño, aquí se concentra una cuarta parte de la biodiversidad de México. Esta riqueza
+                viene de la ubicación geográfica de Hidalgo; el centro del país, donde se converge la <strong>Sierra
+                    Madre Oriental, La Faja Volcánica Transmexicana y el Altiplano</strong>.
+            </p>
+            <img src="./resources/pachuca-aerea.jpg" alt="">
+        </section>
+    </main>
 
-        /*
-        Esta es la función principal del proyecto que se ejecuta al hacer click en el botón "Calcular parábola".
-        Se encarga de obtener los valores de los puntos introducidos por el usuario, calcular los determinantes y
-        la ecuación de la parábola, y finalmente mostrar los resultados en la página.
-        La función utiliza la librería Desmos para mostrar la gráfica de la parábola.
-        */
-        document.getElementById('formulario').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            // Obtener valores numéricos
-            const x1 = parseFloat(document.getElementById('x1').value);
-            const y1 = parseFloat(document.getElementById('y1').value);
-            const x2 = parseFloat(document.getElementById('x2').value);
-            const y2 = parseFloat(document.getElementById('y2').value);
-            const x3 = parseFloat(document.getElementById('x3').value);
-            const y3 = parseFloat(document.getElementById('y3').value);
-
-            // Definimos las matrices para los determinantes
-            const D = [
-                [x1 * x1, x1, 1],
-                [x2 * x2, x2, 1],
-                [x3 * x3, x3, 1]
-            ];
-            // Matriz D
-            const Dx = [
-                [y1, x1, 1],
-                [y2, x2, 1],
-                [y3, x3, 1]
-            ];
-            // Matriz Dy
-            const Dy = [
-                [x1 * x1, y1, 1],
-                [x2 * x2, y2, 1],
-                [x3 * x3, y3, 1]
-            ];
-            // Matriz Dz
-            const Dz = [
-                [x1 * x1, x1, y1],
-                [x2 * x2, x2, y2],
-                [x3 * x3, x3, y3]
-            ];
-
-            /*
-            Definimos la función para resolver una matriz de 3x3:
-            1. Recibe como parámetro una matriz de 3x3.
-            2. Devuelve el determinante de la matriz.
-            3. Utiliza la fórmula de Laplace para resolver el determinante de la forma
-            [ a b c ]
-            [ d e f ] = a * (e*i - f*h) - b*(d*i - f*g) + c*(d*h - e*g)
-            [ g h i ]
-            */
-            
-            function det3(m) {
-                return m[0][0] * (m[1][1] * m[2][2] - m[1][2] * m[2][1]) -
-                    m[0][1] * (m[1][0] * m[2][2] - m[1][2] * m[2][0]) +
-                    m[0][2] * (m[1][0] * m[2][1] - m[1][1] * m[2][0]);
-            }
-
-            // Se asignan los valores de los determinantes a las variables pasandolas por la función
-            
-            const d = det3(D);
-            const dx = det3(Dx);
-            const dy = det3(Dy);
-            const dz = det3(Dz); ;
-
-
-            /*
-            Mostramos determinantes en la página
-            Con el "toFixed" usamos los primeros 3 decimales para mayor legibilidad
-            */
-            document.getElementById('detD').textContent = `D: ${d.toFixed(3)}`;
-            document.getElementById('detDx').textContent = `Dx: ${dx.toFixed(3)}`;
-            document.getElementById('detDy').textContent = `Dy: ${dy.toFixed(3)}`;
-            document.getElementById('detDz').textContent = `Dz: ${dz.toFixed(3)}`;
-
-            // El sistema calcula si el Determinante D = 0, donde no se podría calcular la parábola
-            // En pocas palabras la función no existe XD
-            if (d === 0) {
-                alert('El determinante D es cero, no se puede calcular la parábola.');
-                document.getElementById('ecuacion').textContent = 'Ecuación: No definida';
-                calculator.setExpression({ id: 'parabola', latex: '' });
-                calculator.setExpression({ id: 'p1', latex: '' });
-                calculator.setExpression({ id: 'p2', latex: '' });
-                calculator.setExpression({ id: 'p3', latex: '' });
-                return;
-            }
-
-            // Calculamos coeficientes A B C (Lo mismo que X Y Z)
-            const a = dx / d;
-            const b = dy / d;
-            const c = dz / d;
-
-            // Mostramos la ecuación y usamos los primeros 3 decimales
-            // Convertimos a cadena de texto String para que se muestre en la página
-            const eq = `y = ${a.toFixed(3)}x^2 + ${b.toFixed(3)}x + ${c.toFixed(3)}`;
-            document.getElementById('ecuacion').textContent = `Ecuación: ${eq}`;
-
-            /*
-            Este punto es un poco dificil de explicar
-            El sistema extrae los 3 puntos ingresados en el principio y los usa aquí
-            Le proporciona los puntos a Desmos y los grafíca para verlos en la parábola
-            El termino "latex" significa que el sistema usa la sintaxis de LaTeX para graficar puntos
-            */
-            calculator.setExpression({ id: 'parabola', latex: `y=${a}x^2+${b}x+${c}` });
-            calculator.setExpression({ id: 'p1', latex: `(${x1},${y1})` });
-            calculator.setExpression({ id: 'p2', latex: `(${x2},${y2})` });
-            calculator.setExpression({ id: 'p3', latex: `(${x3},${y3})` });
-        });
-    </script>
+    <script src="./script.js"></script>
 </body>
 
 </html>

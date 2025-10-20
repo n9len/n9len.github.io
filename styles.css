@@ -1,142 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&family=DM+Serif+Text:ital@0;1&family=Pirata+One&display=swap');
+/* Nombre de las font family:
+'Arimo'
+'Pirata One'
+'Bebas Neue'
+*/
+
 * {
-            box-sizing: border-box;
-        }
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 2em;
-            background-color: #f5f7fa;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-            min-height: 100vh;
-        }
+header {
+    width: 100%;
+    height: 70vh; /* VH: Vertical height se ajusta al navegador*/
+    position: relative;
+    overflow: hidden;
+}
 
-        .isla {
-            background: white;
-            max-width: 600px;
-            width: 100%;
-            padding: 25px 30px;
-            border-radius: 14px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
+nav {
+    background-color: rgb(32, 34, 41);
+    padding: 12px;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-        h1 {
-            margin: 0;
-            font-weight: 700;
-            font-size: 2rem;
-            text-align: center;
-        }
+/* ESTILOS PARA EL NAVBAR no moverle nada ya quedó chilo */
 
-        .indicacion {
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-align: center;
-            color: #555;
-        }
+.contenedor-menu {
+    z-index: 10;
+    position: relative;
+    display: inline-block;
+}
 
-        form#formulario {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
-        }
+.boton-menu {
+    font-family: 'Arimo', sans-serif;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-width: 1px;
+    padding: 10px 60px;
+    cursor: pointer; /*Cambia el cursor a el dedito xd*/
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
 
-        .fila-punto {
-            display: flex;
-            gap: 1rem;
-            justify-content: space-between;
-        }
+.boton-menu:hover {
+    font-weight: 900;
+    background-color: aliceblue;
+    color: black;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
 
-        .fila-punto label {
-            flex: 1;
-            font-weight: 700;
-            font-size: 1.3rem;
-            display: flex;
-            flex-direction: column;
-            color: #444;
-        }
+.lista-menu {
+    z-index: 11;
+    font-family: 'Arimo', sans-serif;
+    display: none;
+    position: absolute;
+    background-color: rgb(32, 34, 41);
+    color: white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 180px;
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
 
-        .fila-punto input[type="number"] {
-            margin-top: 6px;
-            padding: 10px 14px;
-            border: 1.8px solid #ccc;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
+.lista-menu li {
+    padding: 10px;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
 
-        .fila-punto input[type="number"]:focus {
-            outline: none;
-            border-color: #007bff;
-            box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
-        }
+.lista-menu li:hover {
+    transform: scale(1.1);
+    background-color: aliceblue;
+    color: black;
+    font-weight:900;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
 
-        button.calcular {
-            align-self: center;
-            padding: 12px 40px;
-            font-size: 1.1rem;
-            font-weight: 700;
-            background-color: #007bff;
-            border: none;
-            border-radius: 12px;
-            color: white;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
+/* HEADER IMGS ETC*/
 
-        button.calcular:hover {
-            background-color: #0056b3;
-        }
+header img.mixquiahuala-header {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /*  recorta */
+    filter: brightness(0.5);
+}
 
-        .resultados-container {
-            font-size: 1.1rem;
-            color: #222;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            line-height: 1.4;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+header .mixquiahuala-texto {
+    z-index: 2;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-family: 'Pirata One', sans-serif;
+    font-size: 6vw; /* responsivo al ancho por si hace zoom o menos */
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
 
-        .resultados-container .ecuacion {
-            font-weight: 700;
-            font-size: 1.3rem;
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #e7f0ff;
-            box-shadow: inset 0 0 5px #a1c4ff;
-            user-select: text;
-        }
+h2 {
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    color: black;
+    font-size: 55px;
+}
 
-        .resultados-container .determinantes {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-        }
+p {
+    font-size: 17px;
+    font-family: 'Arimo', sans-serif;
+}
 
-        .resultados-container .determinante {
-            background-color: #f0f4f8;
-            border-radius: 10px;
-            padding: 12px 18px;
-            box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-            min-width: 110px;
-            font-weight: 600;
-            color: #444;
-            text-align: center;
-            user-select: text;
-        }
+.introduccion {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
 
-        #calculator {
-            width: 600px;
-            height: 400px;
-            background: white;
-            border-radius: 14px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-        }
+.introduccion p {
+    width: 65%;
+    line-height: 1.6em;
+}
+
+.introduccion img {
+    width: 30%;
+    padding: 10px;
+    object-fit: cover;
+}
