@@ -1,0 +1,455 @@
+        @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&family=DM+Serif+Text:ital@0;1&family=Pirata+One&display=swap');
+
+        * {
+            font-family: 'Arimo', sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            color: black;
+            font-size: 55px;
+            margin-bottom: 30px;
+        }
+
+        nav {
+            background-color: rgb(32, 34, 41);
+            padding: 12px;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .contenedor-menu {
+            z-index: 10;
+            position: relative;
+            display: inline-block;
+        }
+
+        .boton-menu {
+            font-family: 'Arimo', sans-serif;
+            background-color: transparent;
+            color: white;
+            border: none;
+            padding: 10px 60px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .boton-menu:hover {
+            font-weight: 900;
+            background-color: aliceblue;
+            color: black;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+        }
+
+        .lista-menu {
+            z-index: 11;
+            display: none;
+            position: absolute;
+            background-color: rgb(32, 34, 41);
+            color: white;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 180px;
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .lista-menu li {
+            padding: 10px;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .lista-menu li:hover {
+            transform: scale(1.1);
+            background-color: aliceblue;
+            color: black;
+            font-weight: 900;
+            box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+        }
+
+        header {
+            width: 100%;
+            height: 70vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h4 {
+            font-family: 'Pirata One';
+        }
+
+        header img.mixquiahuala-header {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.5);
+            z-index: 1;
+        }
+
+        header .mixquiahuala-texto {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-family: 'Pirata One', sans-serif;
+            font-size: 6vw;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        body {
+            font-family: 'Arimo', sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        section {
+            padding: 60px 40px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-family: 'Bebas Neue', sans-serif;
+            color: black;
+            font-size: 55px;
+            margin-bottom: 30px;
+        }
+
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.6em;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px 40px;
+            margin-top: 40px;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            color: #555;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        .table-container table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-family: 'Arimo', sans-serif;
+            text-align: center;
+        }
+
+        .table-container thead {
+            background-color: #555;
+            color: #fff;
+        }
+
+        .table-container th,
+        .table-container td {
+            border: 1px solid #ccc;
+            padding: 10px 15px;
+        }
+
+        .table-container tbody tr:nth-child(even) {
+            background-color: #f0f0f0;
+        }
+
+        .table-container tbody tr:hover {
+            background-color: #eaeaea;
+        }
+
+        .table-container p {
+            text-align: center;
+            font-size: 16px;
+            color: #444;
+        }
+
+        .table-container a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        .table-container a:hover {
+            text-decoration: underline;
+        }
+
+        #introduccion {
+            padding: 60px 20px;
+            background-color: #fefefe;
+            text-align: center;
+        }
+
+        #introduccion h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 50px;
+            margin-bottom: 30px;
+            color: #222;
+        }
+
+        #introduccion .content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            text-align: left;
+        }
+
+        #introduccion p,
+        #introduccion li,
+        #introduccion blockquote,
+        #introduccion aside {
+            font-family: 'Arimo', sans-serif;
+            font-size: 16px;
+            line-height: 1.6em;
+            color: #333;
+        }
+
+        #introduccion blockquote {
+            border-left: 4px solid #555;
+            padding-left: 15px;
+            font-style: italic;
+            color: #555;
+            background-color: #f9f9f9;
+        }
+
+        #introduccion ol,
+        #introduccion ul {
+            padding-left: 20px;
+        }
+
+        #introduccion a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        #introduccion a:hover {
+            text-decoration: underline;
+        }
+
+        #introduccion pre {
+            background-color: #eee;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        #introduccion .info-adicional span {
+            font-weight: bold;
+            color: #444;
+        }
+
+        #flora {
+            padding: 60px 20px;
+            background-color: #fdfdfd;
+            text-align: center;
+        }
+
+        #flora h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 50px;
+            margin-bottom: 30px;
+            color: #222;
+        }
+
+        #flora .content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            text-align: left;
+        }
+
+        #flora table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-family: 'Arimo', sans-serif;
+        }
+
+        #flora th,
+        #flora td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #flora th {
+            background-color: #555;
+            color: #fff;
+        }
+
+        #flora tbody tr:nth-child(even) {
+            background-color: #f0f0f0;
+        }
+
+        #flora tbody tr:hover {
+            background-color: #eaeaea;
+        }
+
+        #flora a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        #flora a:hover {
+            text-decoration: underline;
+        }
+
+        details {
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        details[open] {
+            background-color: #eef;
+        }
+
+        #fauna {
+            padding: 60px 20px;
+            background-color: #f9f9f9;
+            text-align: center;
+        }
+
+        #fauna h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 50px;
+            margin-bottom: 30px;
+            color: #222;
+        }
+
+        #fauna .content {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            text-align: left;
+        }
+
+        #fauna table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-family: 'Arimo', sans-serif;
+        }
+
+        #fauna th,
+        #fauna td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #fauna th {
+            background-color: #555;
+            color: #fff;
+        }
+
+        #fauna tbody tr:nth-child(even) {
+            background-color: #f0f0f0;
+        }
+
+        #fauna tbody tr:hover {
+            background-color: #eaeaea;
+        }
+
+        #fauna a {
+            color: #0077cc;
+            text-decoration: none;
+        }
+
+        #fauna a:hover {
+            text-decoration: underline;
+        }
+
+        figure {
+            margin: 15px 0;
+        }
+
+        figcaption {
+            font-size: 0.9rem;
+            color: #444;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .advertencia {
+            text-align: center;
+            padding: 12px;
+            border: solid;
+            border-radius: 12px;
+            border-color: #fad644;
+            background-color: rgb(255, 255, 121);
+        }
+
+        .center-image {
+            display: block;
+            margin: auto;
+        }

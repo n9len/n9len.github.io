@@ -2,55 +2,539 @@
 <html lang="es">
 
 <head>
-    <!-- Atlas de la flora y fauna de la región -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles.css"> <!-- Styles externo -->
-    <title>Flora y Fauna</title>
+    <meta name="description"
+        content="Sitio informativo sobre Mixquiahuala de Juárez: historia, flora, fauna, medicina tradicional y más.">
+    <meta name="keywords" content="Mixquiahuala, Hidalgo, flora, fauna, medicina tradicional, México">
+    <!-- STYLES Y LÓGICA -->
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <title>Mixquiahuala de Juárez</title>
+
+
+    </style>
 </head>
 
 <body>
+
     <nav>
         <div class="contenedor-menu">
             <button class="boton-menu" id="boton-menu">☰ Menú</button>
             <ul class="lista-menu" id="lista-menu">
                 <li data-target="pagina-principal">Página Principal</li>
                 <li data-target="introduccion">Introducción</li>
-                <li data-target="">Flora</li>
-                <li data-target="">Fauna</li>
-                <li data-target="">Medicina</li>
-                <li data-target="">Ropa</li>
-                <li data-target="">Hábitat y evolución</li>
-                <li data-target="">MiniWiki</li>
-                <li data-target="">Referencias</li>
-                <li data-target="">Formulario</li>
+                <li data-target="fauna">Fauna</li>
+                <li data-target="flora">Flora</li>
+                <li data-target="medicina">Medicina</li>
+                <li data-target="tradiciones">Tradiciones</li>
+                <li data-target="formulario">Formulario</li>
             </ul>
         </div>
     </nav>
 
     <header id="pagina-principal">
-        <img class="mixquiahuala-header" src="./resources/mixquiahuala-header.png" alt="">
+        <img class="mixquiahuala-header" src="./resources/mixquiahuala-header.png" alt="Mixquiahuala de Juárez">
         <div class="mixquiahuala-texto">
             <h4>Flora y fauna</h4>
             <h4>En Hidalgo</h4>
         </div>
     </header>
 
-    <br><br><br>
+    <section id="introduccion">
+        <h1>Introducción</h1>
+        <div class="content">
+            <article>
+                <p>
+                    Mixquiahuala de Juárez es un lugar con historia profunda y riqueza natural.
+                    Su nombre proviene del náhuatl y significa <b><abbr title="lugar donde abundan los magueyes">Lugar
+                            rodeado / abundante de
+                            magueyes</abbr></b>.
+                </p>
+                <p>
+                    Esta región destaca por su biodiversidad, con una gran piscina de elecciones para flora
+                    y fauna.
+                    Ya muchas personas de otros lados, CDMX, EDOMEX, y otros lugares de la república mexicana describen
+                    este lado del charco como un <em>ecosistema clave</em> para la conservación
+                    local.
+                </p> <br>
+                <blockquote cite="https://www.example.com">
+                    "Camarón que se duerme, le quitan sus placas los polis en el centro. - Conocimiento general"
+                </blockquote>
+            </article>
 
-    <main>
-        <h2>La diversidad del ecosistema</h2>
-        <section id="introduccion" class="introduccion">
-            <p>Es bien sabido que en varios lugares de Hidalgo hay mucha variedad de flora y fauna, aunque el territorio
-                pueda parecer pequeño, aquí se concentra una cuarta parte de la biodiversidad de México. Esta riqueza
-                viene de la ubicación geográfica de Hidalgo; el centro del país, donde se converge la <strong>Sierra
-                    Madre Oriental, La Faja Volcánica Transmexicana y el Altiplano</strong>.
-            </p>
-            <img src="./resources/pachuca-aerea.jpg" alt="">
-        </section>
-    </main>
+            <p>Es bien sabido por los pobladores que Mixquiahuala tiene un clima algo impredecible, mayoritariamente
+                porque Hidalgo se ubica en zona montañosa, agregado a su ubicación geográfica, es motivo para su:</p>
+            <ol>
+                <li>Clima semiseco con temporada de lluvias marcada.</li>
+                <li>Predominio de flora y fauna ya adaptada al clima.</li>
+                <li>Prácticas culturales y medicinales heredadas de generaciones en generaciones.</li>
+            </ol>
 
-    <script src="./script.js"></script>
+            <p>La flora y la fauna tambien llega a varios ámbitos aquí en el valle del mezquital, por ejemplo:</p>
+            <ul>
+                <li><strong>Festividades:</strong> algunas celebraciones tradicionales y ferias locales se basan en el
+                    clima o la temporada, como la recolección de la flor.</li>
+                <li><em>Artesanías:</em> tejidos, bordados y productos locales vienen algunos de la flora de
+                    Mixquiahuala e Hidalgo en general.</li>
+                <li><small>Gastronomía:</small> abarca alimentos típicos de la región, bien deliciosos los platillos que
+                    se preparan a partir de tanta diversidad que tenemos en plantas y en animales.</li>
+            </ul>
+
+            <aside>
+                <p>
+                    Si usted coincide con que es riquisimo el sazón, las artesanías y tradiciones de aquí mi pueblito
+                    mágico, dese el lujo de visitar la
+                    <a href="https://es.wikipedia.org/wiki/Mixquiahuala_de_Ju%C3%A1rez" target="_blank">Wikipedia de
+                        Mixquiahuala</a>. Seguro que algo curioso se encuentra.
+                </p>
+                <address>
+                    Avenida Niños Héroes, Colonia Los Tigres, Mixquiahuala, México.
+                </address>
+            </aside>
+
+            <pre><code>
+            Fecha de la redacción: <time datetime="2025-10-25">25 de octubre de 2025</time>
+            Observaciones realizadas por: Ian Calva
+            </code></pre>
+
+            <div class="info-adicional">
+                <p><span>Nota:</span> por obvias razones, esta información no debe tomarse como una verdad absoluta; si
+                    no como una opinión subjetiva realizada por el programador responsable de la programación de la
+                    página.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="flora">
+        <h2>Flora</h2>
+        <div class="content">
+
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./resources/agave-maguey.jpg" alt="Maguey">
+                    <h3>Maguey</h3>
+                    <p>El maguey es una planta típica de la región usada para pulque, fibras y medicina tradicional.</p>
+                </div>
+                <div class="card">
+                    <img src="./resources/mezquite.jpg" alt="Mezquite">
+                    <h3>Mezquite</h3>
+                    <p>Árbol encontrado principalmente en las zonas áridas y semiáridas de México, abarcando el
+                        centro-sur del país. Por él recibe el nombre de "Valle del Mezquital"</p>
+                </div>
+                <div class="card">
+                    <img src="./resources/Tuna.png" alt="Tuna">
+                    <h3>Tuna</h3>
+                    <p>Sale del nopal; fruto que es abundante en fibras y es cultivado debido a que es, en pocas
+                        palabras, riquísimo.</p>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <h3>Principales especies de la región Mixquiahuala / Hidalgo</h3>
+                    <thead>
+                        <tr>
+                            <th>Planta</th>
+                            <th>Nombre Científico</th>
+                            <th>Hábitat</th>
+                            <th>Usos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maguey</td>
+                            <td><em>Agave americana</em></td>
+                            <td>Zonas áridas y semiáridas</td>
+                            <td>Pulque, fibras, medicina</td>
+                        </tr>
+                        <tr>
+                            <td>Encino</td>
+                            <td><em>Quercus spp.</em></td>
+                            <td>Bosques templados</td>
+                            <td>Madera, sombra, conservación de suelo</td>
+                        </tr>
+                        <tr>
+                            <td>Cactus</td>
+                            <td><em>Opuntia spp.</em></td>
+                            <td>Zonas secas y desérticas</td>
+                            <td>Alimentación, decoración, medicina tradicional</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <details>
+                <summary>Información adicional sobre el Maguey</summary>
+                <p>El maguey se cultiva desde tiempos prehispánicos y es esencial en la cultura local para elaborar
+                    bebidas y textiles.</p>
+            </details>
+
+            <details>
+                <summary>Información adicional sobre el Cactus</summary>
+                <p>Algunos cactus son comestibles y se utilizan en platillos tradicionales como nopales y dulces
+                    regionales.</p>
+            </details>
+
+            <aside>
+                <p>Si a usted le interesa tanto la diversidad de Hidalgo y ver a Mixquiahuala, vease: <a
+                        href="https://es.wikipedia.org/wiki/Flora_de_M%C3%A9xico" target="_blank">Flora de México</a>
+                </p>
+            </aside>
+        </div>
+    </section>
+
+    <section id="fauna">
+        <h2>Fauna</h2>
+        <div class="content">
+
+            <div class="cards-container">
+                <div class="card">
+                    <img src="./resources/tlacuache.jpg" alt="Tlacuache">
+                    <h3>Tlacuache</h3>
+                    <p>Único marsupial que habita en México y en centroamérica, conocido tambien como Zarigueya,
+                        aparecen de vez en cuando.</p>
+                </div>
+                <div class="card">
+                    <img src="./resources/petirrojo.jpg" alt="Petirrojo">
+                    <h3>Petirrojo</h3>
+                    <p>Si hay una rama cerca, hay una posibilidad de que esté, a todo lugar que uno vaya seguramente se
+                        aparece.</p>
+                </div>
+                <div class="card">
+                    <img src="./resources/eltigre.jpg" alt="El tigresote">
+                    <h3>Tigre</h3>
+                    <p>Ya ni qué decirles, si el animal es el tigre o el taquero, Mixquiahuala pasará a la historia por
+                        ser el primer municipio que tuvo un tigre en una taquería y lo sacaron como gato.</p>
+                </div>
+            </div>
+
+            <article>
+                <figure>
+                    <img src="./resources/tigrebengala.jpg" alt="Coyote" class=" center-image">
+                    <figcaption>Tigre Bengala (el que se metió a la taquería, no es de aquí, pero si tuviera un peso por
+                        cada vez que sacaran un tigre de una taquería tuviera un peso, lo cual no es mucho pero es
+                        rarisimo que haya pasado)</figcaption>
+                </figure>
+                <figure>
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/gFzQKYisvKQ?si=1aQ8lC-MJuzKmJ-y&amp;controls=0"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <figcaption>Video del Tigre XD<figcaption>
+                </figure>
+                <figure>
+                    <audio controls>
+                        <source src="./resources/recreacion_audio_tigre.mp3" type="audio/mpeg" class="center-image">
+                        Tu navegador no soporta audio.
+                    </audio>
+                    <figcaption>Recreación del rugido del Tigre de los tacos.</figcaption>
+                </figure>
+                <figure>
+                    <iframe class="center-image" width="400" height="250"
+                        src="https://es.wikipedia.org/wiki/Panthera_tigris_tigris" title="Coyote info"></iframe>
+                    <figcaption>Más información sobre el tigre bengala</figcaption>
+                </figure>
+                <figure>
+                    <embed class="center-image"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/08-2011._Panthera_tigris_tigris_-_Texas_Park_-_Lanzarote_-TP02.jpg/640px-08-2011._Panthera_tigris_tigris_-_Texas_Park_-_Lanzarote_-TP02.jpg"
+                        width="400" height="250" type="image/svg+xml">
+                    <figcaption>Foto interactiva de un tigre bengala blanco</figcaption>
+                </figure>
+            </article>
+
+            <div class="table-container">
+                <table>
+                    <caption>Especies representativas y su hábitat</caption>
+                    <thead>
+                        <tr>
+                            <th>Animal</th>
+                            <th>Nombre Científico</th>
+                            <th>Hábitat</th>
+                            <th>Alimentación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Coyote</td>
+                            <td><em>Canis latrans</em></td>
+                            <td>Zonas rurales y semiurbanas</td>
+                            <td>Carnívoro oportunista</td>
+                        </tr>
+                        <tr>
+                            <td>Tejón</td>
+                            <td><em>Meles meles</em></td>
+                            <td>Bosques montañosos</td>
+                            <td>Omnívoro</td>
+                        </tr>
+                        <tr>
+                            <td>Loro cabeza amarilla</td>
+                            <td><em>Amazona ochrocephala</em></td>
+                            <td>Bosques tropicales y huasteca</td>
+                            <td>Frutas, semillas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <aside>
+                <p>Más detalles sobre fauna local: <a href="https://es.wikipedia.org/wiki/Fauna_de_M%C3%A9xico"
+                        target="_blank">Fauna de México</a></p>
+            </aside>
+
+        </div>
+    </section>
+
+    <section id="medicina">
+        <h2>Medicina Tradicional</h2>
+        <div class="advertencia">
+            <p>Notese que antes de leer el siguiente artículo, NO debe tomarse como un recetario 100% fiel y que deba
+                usarse en el día a día, es solamente una recopilación de usos prácticos de la medicina tradicional, NO
+                es una guía para automedicarse.</p>
+        </div>
+        <div class="content">
+            <a href="https://www.gob.mx/semarnat/articulos/plantas-medicinales-de-mexico"><img class="center-image"
+                    src="./resources/hierbasmedicinales.jpg" style="width: 50%; margin-top: 20px;"
+                    alt="Plantas medicinales de México"></a>
+            <article>
+                <p>La medicina tradicional en Mixquiahuala se basa en el uso de plantas locales para tratar
+                    <b>enfermedades comunes, todo aquel Mixquiahualense ha sido tratado por lo menos una vez en su vida
+                        por su abuelita con remedio casero.</b>.
+                </p>
+                <p>Algunas plantas como el <i>maguey</i> y la <u>sábila</u> tienen propiedades destacadas.
+                    Se ha documentado que la <mark>infusión de hierbas</mark> puede aliviar malestares digestivos.</p>
+                <p>Existen recetas que utilizan <small>pequeñas cantidades</small> de plantas combinadas con otros
+                    ingredientes.</p>
+                <p>También se practican técnicas tradicionales que han sido <del>desaprobadas</del> por la medicina
+                    moderna,
+                    aunque algunas están <ins>siendo estudiadas nuevamente</ins>.</p>
+                <p>Algunos <dfn>términos locales</dfn> incluyen: <kbd>jugo de maguey</kbd>, <kbd>gel de sábila</kbd>.
+                </p>
+                <p>En la preparación, a veces se agregan dosis <sub>mínimas</sub> o <sup>especiales</sup> según la edad
+                    del paciente.</p>
+                <p>La dirección de los masajes y remedios puede invertirse usando <bdo dir="rtl">técnicas
+                        tradicionales</bdo>, y se aplican pausas en puntos estratégicos<wbr>.</p>
+            </article>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Planta</th>
+                            <th>Uso Medicinal</th>
+                            <th>Preparación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Maguey</td>
+                            <td>Tratamiento de heridas y digestión</td>
+                            <td>Jugo o cataplasma</td>
+                        </tr>
+                        <tr>
+                            <td>Sábila</td>
+                            <td>Quemaduras y cuidado de la piel</td>
+                            <td>Gel aplicado directamente</td>
+                        </tr>
+                        <tr>
+                            <td>Hierbas locales</td>
+                            <td>Problemas digestivos</td>
+                            <td>Infusión de hojas secas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="tradiciones">
+        <h2>Tradiciones y curiosidades</h2>
+        <div class="content">
+            <hr>
+            <pre>
+            En Mixquiahuala se celebran varias fiestas tradicionales que combinan
+            música, danza y gastronomía típica de la región.
+            </pre>
+
+            <dl>
+                <dt>Fiesta del pulque</dt>
+                <dd>Se celebra cada año en honor al maguey y sus derivados.</dd>
+                <dt>Danza de los viejitos</dt>
+                <dd>Una danza típica con máscaras que simbolizan la sabiduría y la tradición.</dd>
+            </dl>
+
+            <center>
+                <p><s>Algunas tradiciones antiguas han desaparecido con el tiempo.</s></p>
+                <p><u>Otras se conservan y se fortalecen en la comunidad.</u></p>
+            </center>
+
+            <p><strong>Dato curioso:</strong> La bebida tradicional <dfn>pulque</dfn> se obtiene del maguey.</p>
+            <p>Se recomienda probarlo durante <em>las festividades locales</em> para experimentar la cultura.</p>
+            <p>Algunos nombres de plantas y aves se usan en leyendas: <cite>El maguey de la abuela</cite></p>
+
+            <p><small>Estas costumbres se transmiten de generación en generación.</small></p>
+            <p>Antiguamente se usaban símbolos como <kbd>☀</kbd> para representar el sol y la cosecha.</p>
+            <p><bdo dir="rtl">Algunas inscripciones antiguas se leen de derecha a izquierda.</bdo></p>
+            <p>Se colocan marcas especiales como <mark>destacado</mark> en rituales importantes.</p>
+            <p><var>x</var> representa la cantidad de flores usadas en ofrendas.</p>
+
+            <figure>
+                <a class="center-image" href="https://es.wikipedia.org/wiki/Danza_de_los_Viejitos"><img
+                        src="./resources/viejitos.jpg" alt="Festival local" style="width: 40%;"></a>
+                <figcaption>Danza de los viejitos, originaria de Michoacan y celebrada aquí</figcaption>
+            </figure>
+
+            <video width="320" height="240" controls>
+                <source src="./resources/viejitos-video.mp4" type="video/mp4">
+                Tu navegador no soporta video.
+            </video>
+
+            <audio controls>
+                <source src="sonido-festival.mp3" type="audio/mpeg">
+                Tu navegador no soporta audio.
+            </audio>
+
+            <embed
+                src="https://www.dondehayferia.com/sites/default/files/styles/800xywebp/public/imagenes_carteles/carnaval-mixquiahuala-2024-26012024113226-dondehayferia-carteleras.jpg.webp?itok=HVkSdyA1"
+                height="30% ">
+
+            <object data="calendario-tradicional.svg" type="image/svg+xml" width="300" height="200">
+                Calendario Tradicional
+            </object>
+
+            <p style="text-align: center;">Pura gente buena le va a la Máquina</p>
+            <div class="center-image">
+                <svg width="100" height="100">
+                    <circle cx="50" cy="50" r="40" stroke="red" stroke-width="4" fill="blue" />
+                </svg>
+            </div>
+
+            <table>
+                <caption>Curiosidades locales</caption>
+                <colgroup>
+                    <col span="1" style="background-color:#d1d1eb">
+                    <col span="1" style="background-color:#ffffff">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Significado</th>
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <td colspan="2">Estos elementos forman parte de la identidad cultural</td>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    <tr>
+                        <td>Pulque</td>
+                        <td>Bebida tradicional derivada del maguey</td>
+                    </tr>
+                    <tr>
+                        <td>Máscaras</td>
+                        <td>Simbolizan personajes legendarios en danzas</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+        </div>
+    </section>
+
+    <section id="formulario">
+        <h2>Quiz: Descubre la PALABRA SECRETA</h2>
+        <div class="content">
+            <form id="palabra-form">
+                <fieldset>
+                    <legend>Ingresa la palabra secreta</legend>
+
+                    <label for="palabra">Palabra secreta:</label>
+                    <input type="text" id="palabra" name="palabra" placeholder="Escribe aquí...">
+
+                    <select name="opcion" id="opcion">
+                        <option value="">Selecciona una pista</option>
+                        <option value="verde">Es un perro</option>
+                        <option value="espinas">Parece una hamburguesa</option>
+                        <option value="mexicana">Es gordito</option>
+                    </select>
+
+                    <datalist id="sugerencias">
+                        <option value="Pibble">
+                        <option value="Aaron Meli">
+                        <option value="Arriba la Máquina">
+                    </datalist>
+
+                    <label for="sugerencia">Usa sugerencia:</label>
+                    <input list="sugerencias" id="sugerencia" name="sugerencia">
+
+                    <textarea id="comentario" name="comentario"
+                        placeholder="Escribe un comentario (nomas si quieres)"></textarea>
+
+                    <button type="submit">Verificar</button>
+                </fieldset>
+            </form>
+
+            <div id="resultado" style="margin-top:20px; text-align:center;"></div>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>&copy; 2025 Mixquiahuala de Juárez. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // Programación para cambiar de articulo en button menu
+        const botonMenu = document.getElementById('boton-menu');
+        const listaMenu = document.getElementById('lista-menu');
+        botonMenu.addEventListener('click', () => {
+            listaMenu.style.display = listaMenu.style.display === 'block' ? 'none' : 'block';
+        });
+
+
+        botonMenu.addEventListener('click', () => {
+            listaMenu.classList.toggle('activo');
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!listaMenu.contains(e.target) && !botonMenu.contains(e.target)) {
+                listaMenu.classList.remove('activo');
+            }
+        });
+
+        listaMenu.querySelectorAll('li').forEach(item => {
+            item.addEventListener('click', () => {
+                const targetId = item.getAttribute('data-target');
+                const seccion = document.getElementById(targetId);
+                if (seccion) {
+                    seccion.scrollIntoView({ behavior: 'smooth' });
+                }
+                listaMenu.classList.remove('activo');
+            });
+        });
+
+        // Porgramación para el formulario
+        const form = document.getElementById('palabra-form');
+        const resultado = document.getElementById('resultado');
+        const palabraSecreta = "pibble";
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const entrada = document.getElementById('palabra').value.trim();
+            if (entrada.toLowerCase() === palabraSecreta.toLowerCase()) {
+                resultado.innerHTML = `
+                        <p>PIBBLE</p>
+                        <img src="https://i.pinimg.com/736x/e8/0f/96/e80f963634e6a7aa03ad5e510512f6ee.jpg"
+                        alt="secreto..." style="max-width:300px; border-radius:8px;">
+                        <p>Felicidades, has encontrado el pibble cuyo unico propósito es abarcar los tags que no alcanzaron a ser usados arriba XD</p>
+                    `;
+            } else {
+                resultado.innerHTML = "<p>Le atinaste!! Aa te creas no rifas bro</p>";
+            }
+        });
+    </script>
+
 </body>
 
 </html>
