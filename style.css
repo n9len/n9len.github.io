@@ -1,5 +1,14 @@
         @import url('https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Bebas+Neue&family=DM+Serif+Text:ital@0;1&family=Pirata+One&display=swap');
 
+        img,
+        video,
+        iframe,
+        table {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
         * {
             font-family: 'Arimo', sans-serif;
             padding: 0;
